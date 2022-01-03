@@ -1,0 +1,33 @@
+.left-content {
+  position: fixed;
+  top: 10vh;
+  background-image: linear-gradient(to left, rgb(37, 37, 37), blue, black);
+  height: 90vh;
+  width: 20%;
+}
+
+.list-group {
+  margin: 15% 0 0 15%;
+  font-size: 1.3rem;
+  color: rgb(189, 183, 183);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li span {
+  margin-left: 10%;
+}
+
+li:hover {
+  color: white;
+}

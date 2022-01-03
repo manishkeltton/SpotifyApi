@@ -1,0 +1,25 @@
+.header{
+    width: 100%;
+    height: 10vh;
+    padding: 0 4%;
+    position:fixed;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+.left-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-spot{
+    color: blue;
+    margin-left: 2%;
+    font-size:2rem;
+    font-weight: bold;
+    letter-spacing:2px;
+  }

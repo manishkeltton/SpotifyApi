@@ -1,0 +1,42 @@
+img{
+    width: 12vw;
+    height: 80px;
+    margin:5% 0;
+  }
+  
+  .album-list{
+    background-color:rgb(46, 44, 44);
+    position: relative;
+    color: white;
+    margin: 2% 0;
+    font-size: 0.7rem;
+    width: 15vw;
+    height: 140px;
+    border-radius: 5px;
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+  }
+  
+  .play{
+    display: none;
+    top: 50px;
+    left: 115px;
+    position: absolute;
+  }
+  
+  .album-list span{
+     width: 13vw;
+     height: 50%;
+     margin: 0 0 0 10%;
+  }
+  
+  .album-list:hover{
+    background-color: rgb(27, 25, 25);
+    cursor: pointer;
+  }
+  
+  .album-list:hover .play{
+    display: block;
+  }
