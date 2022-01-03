@@ -1,5 +1,5 @@
 const clientID = "f2dd2457309f4707962f209d3d55c38e";
-const redirectUrl = "http://localhost:3000"
+const redirectUrl = "https://sleepy-williams-972fe5.netlify.app"
 
 let accessToken;
 
