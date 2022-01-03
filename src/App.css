@@ -5,7 +5,7 @@
 }
 
 .App{
-  background-image: linear-gradient(to right, rgb(73, 38, 38),orange,rgb(129, 129, 98),green,rgb(61, 61, 95),indigo,violet);
+  background-image: linear-gradient(to right, rgb(34, 32, 32),rgb(59, 58, 54),rgb(129, 129, 98));
   /* background-color:rgb(71, 39, 16); */
 }
 
