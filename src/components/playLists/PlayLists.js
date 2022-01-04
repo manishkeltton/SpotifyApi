@@ -4,7 +4,7 @@ import './playLists.css'
 function PlayLists({ trackData, onPlayList }) {
     return (
         <div className="playlist-cotainer">
-            <table>
+            {trackData && (<table>
                 <thead>
                     <tr>
                         <th>#</th>
@@ -24,9 +24,9 @@ function PlayLists({ trackData, onPlayList }) {
                         })
                     }
                 </tbody>
-            </table>
-            
-            
+            </table>)}
+
+
         </div>
     )
 }
