@@ -70,14 +70,16 @@ function App() {
   }
 
   let backBtn = () => {
-     setIsTrackData(false);
-     setIsPlayList(false);
-     setIsState(true);
+    setIsTrackData(false);
+    setIsPlayList(false);
+    setIsState(true);
   }
 
   let forwardBtn = () => {
-      setIsPlayList(true);
+    setIsPlayList(true);
+    if (trackData) {
       setIsState(false);
+    }
   }
 
   // console.log("State =>", state);
@@ -93,7 +95,7 @@ function App() {
           </div>
           <h1>Elvis prisley</h1>
           <div className="container">
-            {isState && (<Album state={state} trackalbum={trackalbum} isTrackData={isTrackData}/>)}
+            {isState && (<Album state={state} trackalbum={trackalbum} isTrackData={isTrackData} />)}
             {isPlayList && (<PlayLists trackData={trackData} onPlayList={onPlayList} url={url} />)}
           </div>
         </div>
