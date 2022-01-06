@@ -14,7 +14,7 @@ function PlayLists({ trackData, onPlayList }) {
                 <tbody>
 
                     {
-                        trackData && trackData.tracks.map((track, index) => {
+                        trackData && trackData.map((track, index) => {
                             return (
                                 <tr>
                                     <td>{index}</td>

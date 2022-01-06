@@ -25,37 +25,29 @@ function App() {
 
   useEffect(() => {
     SpotifyNew.setAccessToken(accessToken);
-    SpotifyNew.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function (err, data) {
-      if (err) console.error(err);
-      else {
+    fetch('https://api.spotify.com/v1/artists/43ZHCT0cAZBISjO8DG9PnE/albums')
+      .then(response => response.json())
+      .then(results => {
+        // console.log("New Result =>", results)
         setIsState(true);
-        setState(data.items);
-      };
-    });
-
+        setState(results.items);
+      }).catch(error => console.log("Error =>", error))
   }, [])
-
 
   let trackalbum = ids => {
     console.log("tracalbum => ", ids);
-    SpotifyNew
-      .getAlbum(ids)
-      .then(function (data) {
-        console.log("Album track => ", data);
-        return data.tracks.items.map(function (t) {
-          // console.log("iddd =.> ", t.id);
-          return t.id;
-        });
-      })
-      .then(function (trackIds) {
-        return SpotifyNew.getTracks(trackIds);
-      })
-      .then(function (tracksInfo) {
-        console.log("tracksInfo => ", tracksInfo);
+    fetch(`https://api.spotify.com/v1/albums/${ids}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    })
+      .then(data => data.json())
+      .then(res => {
+        // console.log("ressss =>", res.tracks.items)
         setIsPlayList(true);
         setIsTrackData(true);
-        // setIsUrl(true);
-        setTrackData(tracksInfo);
+        setTrackData(res.tracks.items);
       })
       .catch(function (error) {
         console.error(error);
@@ -63,8 +55,8 @@ function App() {
   }
 
   let onPlayList = (urlData) => {
-    console.log("urlData => ", urlData);
-    console.log("IseUrl =>", isUrl);
+    // console.log("urlData => ", urlData);
+    // console.log("IseUrl =>", isUrl);
     setIsUrl(true);
     setUrl(urlData);
   }
@@ -82,7 +74,6 @@ function App() {
     }
   }
 
-  // console.log("State =>", state);
   return (
     <div className="App">
       <Header />
